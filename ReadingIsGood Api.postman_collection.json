@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "1745c857-34a3-411a-bf3a-11c14137c287",
+		"name": "ReadingIsGood Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "New Customer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Erhan\",\r\n    \"lastName\": \"Yıldırım\",\r\n    \"email\" : \"erhan_yil@windowslive.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwicm9sZSI6IlVTRVIiLCJpZCI6IjYxMDczM2JiYmNhN2IxMjk0NzU4ZGI0NyIsImlhdCI6MTYyNzg2MjI4OH0.AVtJI85ohgadwfOQac3ka7euEFhZV7NicBhfxwRqYp1mZKzlVbMq-M8z4QTJgwUfmTw3rLgfTg9DUpDJHAsnxA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/orders?page=0&size=11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "New Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwicm9sZSI6IlVTRVIiLCJpZCI6MSwiaWF0IjoxNjI3ODU0MTMzfQ.x1X7QPdUPVq_ouotJBoIQUhrNBhhQURPvvcdVNGGOQuVew2_xkpYP2ipJwKtVa6TqBaIVlhDb0V0I16tpD_6Ug",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Greenlights\",\r\n    \"author\": \"Matthew McConaughey\",\r\n    \"price\": 60,\r\n    \"stock\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book Stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwicm9sZSI6IlVTRVIiLCJpZCI6MSwiaWF0IjoxNjI3ODUyMzA4fQ.JS13wf6Dfd2K7BkHhsILV57Q7L7Zpz_2NBwpb4xN2TcpzOf1JKLsbisFPfhCzRu-3K2DJyNI4L6Kj-pbwiCDvQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ad\",\r\n    \"author\": \"fd\",\r\n    \"price\": 12.2,\r\n    \"stock\": 11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Create Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"erhan_yil@windowslive.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/create_token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"create_token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "New Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwicm9sZSI6IlVTRVIiLCJpZCI6IjYxMDczM2JiYmNhN2IxMjk0NzU4ZGI0NyIsImlhdCI6MTYyNzg2MjI4OH0.AVtJI85ohgadwfOQac3ka7euEFhZV7NicBhfxwRqYp1mZKzlVbMq-M8z4QTJgwUfmTw3rLgfTg9DUpDJHAsnxA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"items\": [\r\n        {\r\n            \"bookid\": \"6107351ce40c9b776fcb4a9c\",\r\n            \"count\": 24\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwicm9sZSI6IlVTRVIiLCJpZCI6IjYxMDczM2JiYmNhN2IxMjk0NzU4ZGI0NyIsImlhdCI6MTYyNzg2MjI4OH0.AVtJI85ohgadwfOQac3ka7euEFhZV7NicBhfxwRqYp1mZKzlVbMq-M8z4QTJgwUfmTw3rLgfTg9DUpDJHAsnxA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order/610738683ef3ac4ae33c32fc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order",
+								"610738683ef3ac4ae33c32fc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders With Date Params",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlcmhhbl95aWxAd2luZG93c2xpdmUuY29tIiwicm9sZSI6IlVTRVIiLCJpZCI6IjYxMDczM2JiYmNhN2IxMjk0NzU4ZGI0NyIsImlhdCI6MTYyNzg2MjI4OH0.AVtJI85ohgadwfOQac3ka7euEFhZV7NicBhfxwRqYp1mZKzlVbMq-M8z4QTJgwUfmTw3rLgfTg9DUpDJHAsnxA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/order?startDate=12.12.2000&endDate=12.12.2021",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"order"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "12.12.2000"
+								},
+								{
+									"key": "endDate",
+									"value": "12.12.2021"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

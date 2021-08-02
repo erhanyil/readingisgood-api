@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/test?readPreference=primary&appname=MongoDB%20Compass&ssl=false
+
+api:
+  allowedOrigin: "*"
+  secretKey: 2a10GEbgeGYxH6zVq2nQVziOQ55j3FnFo6xT1TWTDxx8XfPBBp89H096
+  validity: 1548242589
